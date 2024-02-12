@@ -4,8 +4,6 @@ object Empty {
   def apply[A](x: A): Empty[A] = new Empty[A] {
     override val value: A = x
   }
-
-  object instances extends PrimitiveInstances
 }
 
 trait Empty[A] {
