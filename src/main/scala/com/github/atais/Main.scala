@@ -10,7 +10,7 @@ object Main extends App {
 
     // now I can reuse Empty instance, resolving to emptyFoo/Bar
     println(implicitly[Empty[Foo0]].value)
-    println(implicitly[Empty[Foo149]].value)
+    println(implicitly[Empty[Foo30]].value)
   }
 
 }
