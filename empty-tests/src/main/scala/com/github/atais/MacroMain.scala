@@ -2,7 +2,7 @@ package com.github.atais
 
 import com.github.atais.empty.Empty
 
-object Main extends App {
+object MacroMain extends App {
 
   // caching case class' Empty instances
   {
