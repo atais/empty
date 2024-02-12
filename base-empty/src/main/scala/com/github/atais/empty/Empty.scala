@@ -5,7 +5,7 @@ object Empty {
     override val value: A = x
   }
 
-  object instances extends ShapelessInstances with PrimitiveInstances
+  object instances extends PrimitiveInstances
 }
 
 trait Empty[A] {
