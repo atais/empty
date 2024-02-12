@@ -1,9 +1,9 @@
-package com.github.atais
+package com.github.atais.empty
 
 import com.github.atais.empty.EmptyMacro.deriveEmpty
-import com.github.atais.empty.{Empty, PrimitiveInstances}
+import com.github.atais._
 
-object EmptyInstances extends PrimitiveInstances {
+object MacroEmptyInstances extends PrimitiveInstances {
 
   implicit val emptyFoo0: Empty[Foo0] = deriveEmpty
   implicit val emptyFoo1: Empty[Foo1] = deriveEmpty

@@ -2,11 +2,11 @@ package com.github.atais
 
 import com.github.atais.empty.Empty
 
-object Main extends App {
+object ShapelessMain extends App {
 
   // caching case class' Empty instances
   {
-    import com.github.atais.empty.EmptyInstances._
+    import com.github.atais.empty.ShapelessEmptyInstances._
 
     // now I can reuse Empty instance, resolving to emptyFoo/Bar
     println(implicitly[Empty[Foo0]].value)

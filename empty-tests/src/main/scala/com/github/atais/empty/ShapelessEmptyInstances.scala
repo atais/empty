@@ -2,7 +2,7 @@ package com.github.atais.empty
 
 import com.github.atais._
 
-object EmptyInstances extends ShapelessInstances with PrimitiveInstances {
+object ShapelessEmptyInstances extends ShapelessInstances with PrimitiveInstances {
 
   implicit val emptyFoo0: Empty[Foo0] = genericEmpty
   implicit val emptyFoo1: Empty[Foo1] = genericEmpty
