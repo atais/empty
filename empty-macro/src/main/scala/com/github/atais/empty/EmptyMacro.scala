@@ -29,11 +29,9 @@ object EmptyMacro {
       }
 
     c.Expr[Empty[A]] {
-      q"""
-        new Empty[$aType] {
+      q"""new Empty[$aType] {
          override val value: $aType = new $aType(..$values)
-        }
-      """
+        }"""
     }
   }
 
