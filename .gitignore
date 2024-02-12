@@ -1,0 +1,19 @@
+# SBT
+dist
+project/target
+project/plugins/target
+target
+.target
+.sbtopts
+.caches
+local.sbt
+.bsp
+
+# IDEA
+.idea/
+*.iml
+.idea_modules
+
+# Scala
+.tmpBin
+.history
