@@ -20,6 +20,9 @@ lazy val `macro-empty` = (project in file("macro-empty"))
 
 lazy val `macro-empty-use` = (project in file("macro-empty-use"))
   .settings(
+    scalacOptions ++= Seq(
+      "-Ymacro-debug-lite"
+    )
   )
   .dependsOn(`macro-empty`)
 

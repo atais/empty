@@ -18,14 +18,15 @@ object EmptyMacro {
       c.abort(c.enclosingPosition, s"$aType is not a case class")
     }
 
-    val fields = aType.decls.collect {
-      case m: MethodSymbol if m.isCaseAccessor => m
-    }.toList
-
-    val values = fields.map(_.returnType).map { fieldType =>
-      val emptyImplicitType = tq"Empty[$fieldType]"
-      q"implicitly[$emptyImplicitType].value"
-    }
+    val values = aType.decls
+      .collect {
+        case m: MethodSymbol if m.isCaseAccessor => m
+      }
+      .map(_.returnType)
+      .map { fieldType =>
+        val emptyImplicitType = tq"Empty[$fieldType]"
+        q"implicitly[$emptyImplicitType].value"
+      }
 
     c.Expr[Empty[A]] {
       q"""
