@@ -24,8 +24,12 @@ object EmptyMacro {
       }
       .map(_.returnType)
       .map { fieldType =>
-        val emptyImplicitType = tq"Empty[$fieldType]"
-        q"implicitly[$emptyImplicitType].value"
+        val empty = tq"Empty[$fieldType]"
+        val t = c.typecheck(empty, c.TYPEmode)
+        val i = c.inferImplicitValue(t.tpe)
+        val q = q"$i.value"
+        q
+      //        q"implicitly[$emptyImplicitType].value"
       }
 
     c.Expr[Empty[A]] {
