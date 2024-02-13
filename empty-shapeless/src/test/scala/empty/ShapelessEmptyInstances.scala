@@ -1,6 +1,6 @@
-package com.github.atais.empty
+package empty
 
-import com.github.atais._
+import com.github.atais.empty._
 
 object ShapelessEmptyInstances extends ShapelessInstances with PrimitiveInstances {
 

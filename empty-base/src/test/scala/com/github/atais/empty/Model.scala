@@ -1,4 +1,4 @@
-package com.github.atais
+package com.github.atais.empty
 
 // format: off
 case class 	Foo0	(str: String, b: Boolean, i: Int)

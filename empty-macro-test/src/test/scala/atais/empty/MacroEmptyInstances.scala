@@ -1,7 +1,7 @@
-package com.github.atais.empty
+package atais.empty
 
 import com.github.atais.empty.EmptyMacro.deriveEmpty
-import com.github.atais._
+import com.github.atais.empty._
 
 object MacroEmptyInstances extends PrimitiveInstances {
 

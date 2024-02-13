@@ -2,12 +2,12 @@ ThisBuild / version := "0.1.0-SNAPSHOT"
 
 ThisBuild / scalaVersion := "2.11.8"
 
-lazy val root = (project in file("."))
+lazy val empty = (project in file("."))
   .aggregate(
     `empty-shapeless`,
     `empty-macro`,
     `empty-base`,
-    `empty-tests`
+    `empty-macro-test`
   )
 
 lazy val `empty-base` = project in file("empty-base")
@@ -18,7 +18,7 @@ lazy val `empty-macro` = (project in file("empty-macro"))
   )
   .dependsOn(`empty-base`)
 
-lazy val `empty-tests` = (project in file("empty-tests"))
+lazy val `empty-macro-test` = (project in file("empty-macro-test"))
   .settings(
     scalacOptions ++= Seq(
       "-Ymacro-debug-lite"
@@ -26,11 +26,11 @@ lazy val `empty-tests` = (project in file("empty-tests"))
   )
   .dependsOn(
     `empty-macro`,
-    `empty-shapeless`
+    `empty-base` % "compile->compile;test->test"
   )
 
 lazy val `empty-shapeless` = (project in file("empty-shapeless"))
   .settings(
     libraryDependencies += "com.chuusai" %% "shapeless" % "2.3.2"
   )
-  .dependsOn(`empty-base`)
+  .dependsOn(`empty-base` % "compile->compile;test->test")
