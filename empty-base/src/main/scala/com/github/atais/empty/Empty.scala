@@ -1,11 +1,7 @@
 package com.github.atais.empty
 
 object Empty {
-  def apply[A](x: A): Empty[A] = new Empty[A] {
-    override val value: A = x
-  }
+  def apply[A](x: A): Empty[A] = new Empty[A](x)
 }
 
-trait Empty[A] {
-  val value: A
-}
+class Empty[A](val value: A) extends AnyVal

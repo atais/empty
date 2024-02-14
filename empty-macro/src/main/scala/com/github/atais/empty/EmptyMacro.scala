@@ -29,13 +29,10 @@ object EmptyMacro {
         val i = c.inferImplicitValue(t.tpe)
         val q = q"$i.value"
         q
-      //        q"implicitly[$emptyImplicitType].value"
       }
 
     c.Expr[Empty[A]] {
-      q"""new Empty[$aType] {
-         override val value: $aType = new $aType(..$values)
-        }"""
+      q"""new Empty[$aType](new $aType(..$values))"""
     }
   }
 
